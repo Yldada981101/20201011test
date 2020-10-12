@@ -19,6 +19,7 @@ public class oneServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String strsusheid=request.getParameter("susheid");
         String json="{}";
+        String xyl;
         if (strsusheid != null && strsusheid.trim().length()>0) {
             sushedao dao=new sushedao();
             susheduixiang s=dao.sushebianhao(Integer.valueOf(strsusheid));
@@ -31,5 +32,6 @@ public class oneServlet extends HttpServlet {
         pw.println(json);
         pw.flush();
         pw.close();
+
     }
 }
